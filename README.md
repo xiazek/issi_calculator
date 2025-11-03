@@ -7,8 +7,11 @@
 
 Brak zależności uruchomieniowych requirements.txt.
 
+
 zainstaluj zależności developerskie i testowe
 ```bash
+python3 -m venv .venv
+activate .venv/bin/activate
 pip3 install -r requirements-dev.txt
 ```
 
