@@ -1,4 +1,5 @@
 # Zadanie na zaliczenie przedmiotu "Wybrane zagadnienia z inżynierii oprogramowania"
+[![Pylint](https://github.com/xiazek/issi_calculator/actions/workflows/pylint.yml/badge.svg)](https://github.com/xiazek/issi_calculator/actions/workflows/pylint.yml)
 
  - [calculator.py](calculator.py)
  - [test_calculator.py](test_calculator.py)
