@@ -1,5 +1,6 @@
 """Calculator providing basic arithmetic operations."""
 
+
 class Calculator:
     """Simple calculator class"""
 
@@ -21,7 +22,7 @@ class Calculator:
         """
         return self.__op1 + self.__op2
 
-    def substract(self) -> float:
+    def subtract(self) -> float:
         """Calculate the difference between two operands.
 
         Returns:
