@@ -28,7 +28,7 @@ jobs:
     - name: tests with coverage
       run: |
         coverage run -m pytest
-        coverage html
+        coverage html --fail-under=100
     - name: archive coverage HTML report
       if: always()
       uses: actions/upload-artifact@v4

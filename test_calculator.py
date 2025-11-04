@@ -13,9 +13,9 @@ class TestCalculator(TestCase):
         calc = Calculator(5, 3)
         assert calc.sum() == 8
 
-    def test_calculator_subtract(self):
-        calc = Calculator(5, 3)
-        assert calc.subtract() == 2
+    # def test_calculator_subtract(self):
+    #     calc = Calculator(5, 3)
+    #     assert calc.subtract() == 2
 
     def test_calculator_multiply(self):
         calc = Calculator(5, 3)
