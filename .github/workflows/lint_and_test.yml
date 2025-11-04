@@ -22,9 +22,6 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-    - name: Test with pytest
-      run: |
-        pytest
     - name: tests with coverage
       run: |
         coverage run -m pytest
