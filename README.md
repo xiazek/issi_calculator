@@ -27,7 +27,7 @@ coverage run -m pytest
 ### Raport z pokrycia testami coverage
 
  - [.github/workflows/lint_and_test.yml](Github action) jest skonfigurowane aby sprawdzać coverage
- - Raport jest wysyłany jako artefakt i dostępny z [poziomu Actions](https://github.com/xiazek/issi_calculator/actions/workflows/lint_and_test.yml) w zakładce Artefacts każdego "builda".
+ - Raport jest wysyłany jako artefakt i dostępny z [poziomu Actions](https://github.com/xiazek/issi_calculator/actions/workflows/lint_and_test.yml) w zakładce Artefacts każdego "builda". (dodane w https://github.com/xiazek/issi_calculator/pull/8)
  - dodłem też ręcznie raport do [htmlcov/index.html](htmlcov/index.html)
  
 
