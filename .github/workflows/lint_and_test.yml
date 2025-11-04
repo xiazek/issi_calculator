@@ -25,3 +25,14 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: tests with coverage
+      run: |
+        coverage run -m pytest
+        coverage html
+    - name: archive coverage HTML report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report-html-${{ matrix.python-version }}
+        path: htmlcov
+        retention-days: 7
