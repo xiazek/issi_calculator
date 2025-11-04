@@ -4,6 +4,15 @@
  - [calculator.py](calculator.py)
  - [test_calculator.py](test_calculator.py)
 
+## CI pipeline i Projekt
+
+ - Skonfigurowane github actions aby uruchamiać:
+   - pytest 
+   - coverage 
+   - pylint
+ - Ważniejsze zmiany zostały wprowadzone przez [pull requesty](https://github.com/xiazek/issi_calculator/pulls)
+ - Wybrane zadania miały też swoje odpowiedniki [Projekcie](https://github.com/xiazek/issi_calculator/projects/1)
+
 ## Zależności developerskie i testowanie
 
 Brak zależności uruchomieniowych requirements.txt.
