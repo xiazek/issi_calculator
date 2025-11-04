@@ -3,3 +3,5 @@ source = .
 
 [report]
 fail_under = 100
+exclude_lines =
+    if __name__ == .__main__.:
