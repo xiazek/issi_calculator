@@ -1,5 +1,5 @@
 # Zadanie na zaliczenie przedmiotu "Wybrane zagadnienia z inżynierii oprogramowania"
-[![lint and test](https://github.com/xiazek/issi_calculator/actions/workflows/lint_and_test.yml/badge.svg)](https://github.com/xiazek/issi_calculator/actions/workflows/lint_and_test.yml)
+[![test coverage and lint](https://github.com/xiazek/issi_calculator/actions/workflows/lint_and_test.yml/badge.svg)](https://github.com/xiazek/issi_calculator/actions/workflows/lint_and_test.yml)
 
  - [calculator.py](calculator.py)
  - [test_calculator.py](test_calculator.py)
@@ -11,7 +11,7 @@
    - coverage 
    - pylint
  - Ważniejsze zmiany zostały wprowadzone przez [pull requesty](https://github.com/xiazek/issi_calculator/pulls)
- - Wybrane zadania miały też swoje odpowiedniki [Projekcie](https://github.com/xiazek/issi_calculator/projects/1)
+ - Wybrane zadania miały też swoje odpowiedniki [Projekcie](https://github.com/users/xiazek/projects/2)
 
 ## Zależności developerskie i testowanie
 
