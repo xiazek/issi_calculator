@@ -1,4 +1,5 @@
 """Calculator providing basic arithmetic operations."""
+import sys
 
 
 class Calculator:
@@ -48,3 +49,30 @@ class Calculator:
         if self.__op2 == 0:
             return None
         return self.__op1 / self.__op2
+
+def main(argv=None):
+    """Demonstrate Calculator class usage."""
+    if argv is None:
+        argv = sys.argv[1:]
+    if len(argv) == 2:
+        try:
+            p1 = float(argv[0])
+            p2 = float(argv[1])
+            print(f"Calculations for: {p1} {p2}")
+            calculator = Calculator(p1, p2)
+            print(f"Sum: {calculator.sum()}")
+            print(f"Subtract: {calculator.subtract()}")
+            print(f"Multiply: {calculator.multiply()}")
+            print(f"Divide: {calculator.divide()}")
+            return 0
+        except ValueError:
+            print("Error: Arguments must be numbers")
+            return 1
+    else:
+        print("Usage: python calculator.py <number1> <number2>")
+        print("Example: python calculator.py 2 3")
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
