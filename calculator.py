@@ -5,6 +5,25 @@ import sys
 class Calculator:
     """Simple calculator class"""
 
+    @classmethod
+    def for_numbers(cls, op1, op2):
+        """Creates Calculator instance from values that need conversion to float.
+        Additional layer, so that we do not need to worry about types inside the class.
+
+        Args:
+            op1: First operand (will be converted to float)
+            op2: Second operand (will be converted to float)
+
+        Returns:
+            Calculator instance if conversion succeeds, None otherwise
+        """
+        try:
+            float_op1 = float(op1)
+            float_op2 = float(op2)
+            return cls(float_op1, float_op2)
+        except (ValueError, TypeError):
+            return None
+
     def __init__(self, op1: float, op2: float):
         """Initialize calculator with two operands.
 
@@ -48,6 +67,7 @@ class Calculator:
         """
         if self.__op2 == 0:
             return None
+        # eventually we could be just catching ZeroDivisionError when calling.
         return self.__op1 / self.__op2
 
 def main(argv=None):
@@ -75,4 +95,4 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())
