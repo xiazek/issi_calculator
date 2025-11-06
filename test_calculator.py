@@ -37,6 +37,17 @@ class TestCalculator(TestCase):
 
 
 class TestCalculatorForNumbers:
+
+    def test_init(self):
+        calc = Calculator.for_numbers(5, 3)
+        #
+        assert calc.__class__ == Calculator
+
+    def test_init_with_not_numbers(self):
+        calc = Calculator.for_numbers("wrong-parameter", 3)
+        #
+        assert calc == None
+
     """Pytest tests for `Calculator.for_numbers` arithmetic operations."""
     @pytest.mark.parametrize(
         "op1, op2, expected",
