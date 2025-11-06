@@ -110,4 +110,3 @@ class TestDemo(TestCase):
         """Test main with valid arguments."""
         result = demo(15.2, 3.0)
         assert result == approx(18.2)
-
