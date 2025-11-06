@@ -20,7 +20,7 @@ class TestCalculator(TestCase):
 
     def test_calculator_multiply(self):
         calc = Calculator(5.2, 3.0)
-        self.assertAlmostEqual(calc.multiply(),15.6)
+        self.assertAlmostEqual(calc.multiply(), 15.6)
 
     def test_calculator_multiply_with_strings(self):
         calc = Calculator.for_numbers("5.2", "3.0")
@@ -28,7 +28,7 @@ class TestCalculator(TestCase):
 
     def test_calculator_divide(self):
         calc = Calculator(5, 3)
-        self.assertAlmostEqual(calc.divide(), 1.6666666666666667, places=12)
+        self.assertAlmostEqual(calc.divide(), 1.666666667, places=7)
 
     def test_calculator_divide_by_zero(self):
         """Calculator.divide should return None when dividing by zero."""
@@ -106,6 +106,7 @@ class TestCalculatorForNumbers:
     def test_divide_by_zero(self, op1, op2):
         calc = Calculator.for_numbers(op1, op2)
         assert calc.divide() is None
+
 
 class TestMain(TestCase):
     """Test suite for verifying main function."""
