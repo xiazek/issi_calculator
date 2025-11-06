@@ -37,18 +37,16 @@ class TestCalculator(TestCase):
 
 
 class TestCalculatorForNumbers:
+    """tests via `Calculator.for_numbers` that takes care about type casting to float"""
 
     def test_init(self):
         calc = Calculator.for_numbers(5, 3)
-        #
-        assert calc.__class__ == Calculator
+        assert isinstance(calc, Calculator)
 
     def test_init_with_not_numbers(self):
         calc = Calculator.for_numbers("wrong-parameter", 3)
-        #
-        assert calc == None
+        assert calc is None
 
-    """Pytest tests for `Calculator.for_numbers` arithmetic operations."""
     @pytest.mark.parametrize(
         "op1, op2, expected",
         [
