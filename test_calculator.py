@@ -112,32 +112,32 @@ class TestMain(TestCase):
     """Test suite for verifying main function."""
 
     def test_main(self):
-        """Test main function with valid arguments."""
+        """Test main with valid arguments."""
         result = main(['5', '3'])
         assert result == 0
 
     @patch('sys.argv', ['calculator.py', '5', '3'])
     def test_main_with_none_argv(self):
-        """Test main function with None argv (should read from sys.argv)."""
+        """main with None argv should read from sys.argv."""
         result = main(None)
         assert result == 0
 
     def test_main_with_invalid_arguments(self):
-        """Test main function with non-numeric arguments."""
+        """main with non-numeric arguments results with Error on exit"""
         result = main(['abc', 'def'])
         assert result == 1
 
     def test_main_with_no_arguments(self):
-        """Test main function with no arguments."""
+        """main with no arguments. Results with Error on exit"""
         result = main([])
         assert result == 1
 
     def test_main_with_one_argument(self):
-        """Test main function with only one argument."""
+        """main  with only one argument results with Error on exit"""
         result = main(['5'])
         assert result == 1
 
     def test_main_with_too_many_arguments(self):
-        """Test main function with more than two arguments."""
+        """main with more than two arguments, results with Error on exit """
         result = main(['5', '3', '2'])
         assert result == 1

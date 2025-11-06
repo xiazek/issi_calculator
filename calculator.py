@@ -8,6 +8,7 @@ class Calculator:
     @classmethod
     def for_numbers(cls, op1, op2):
         """Create Calculator instance from values that need conversion to float.
+        Additional layer, so that we do not need to worry about types inside the class.
 
         Args:
             op1: First operand (will be converted to float)
@@ -66,6 +67,7 @@ class Calculator:
         """
         if self.__op2 == 0:
             return None
+        # eventually we could be just catching ZeroDivisionError when calling.
         return self.__op1 / self.__op2
 
 def main(argv=None):
