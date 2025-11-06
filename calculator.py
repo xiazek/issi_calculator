@@ -5,6 +5,24 @@ import sys
 class Calculator:
     """Simple calculator class"""
 
+    @classmethod
+    def for_numbers(cls, op1, op2):
+        """Create Calculator instance from values that need conversion to float.
+
+        Args:
+            op1: First operand (will be converted to float)
+            op2: Second operand (will be converted to float)
+
+        Returns:
+            Calculator instance if conversion succeeds, None otherwise
+        """
+        try:
+            float_op1 = float(op1)
+            float_op2 = float(op2)
+            return cls(float_op1, float_op2)
+        except (ValueError, TypeError):
+            return None
+
     def __init__(self, op1: float, op2: float):
         """Initialize calculator with two operands.
 
@@ -75,4 +93,4 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())
