@@ -70,29 +70,13 @@ class Calculator:
         # eventually we could be just catching ZeroDivisionError when calling.
         return self.__op1 / self.__op2
 
-def main(argv=None):
+def demo(op1, op2):
     """Demonstrate Calculator class usage."""
-    if argv is None:
-        argv = sys.argv[1:]
-    if len(argv) == 2:
-        try:
-            p1 = float(argv[0])
-            p2 = float(argv[1])
-            print(f"Calculations for: {p1} {p2}")
-            calculator = Calculator(p1, p2)
-            print(f"Sum: {calculator.sum()}")
-            print(f"Subtract: {calculator.subtract()}")
-            print(f"Multiply: {calculator.multiply()}")
-            print(f"Divide: {calculator.divide()}")
-            return 0
-        except ValueError:
-            print("Error: Arguments must be numbers")
-            return 1
-    else:
-        print("Usage: python calculator.py <number1> <number2>")
-        print("Example: python calculator.py 2 3")
-        return 1
-
+    calculator = Calculator(op1, op2)
+    print("Sum of operands", calculator.sum())
+    print("Quotient of operands", calculator.divide())
+    return calculator.sum()
 
 if __name__ == "__main__":
-    sys.exit(main())
+    demo(15.2, 3.0)
+    sys.exit(0)

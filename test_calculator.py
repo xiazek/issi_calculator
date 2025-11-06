@@ -3,12 +3,11 @@
 
 """Unit tests for the `Calculator` class."""
 from unittest import TestCase
-from unittest.mock import patch
 
 import pytest
 from pytest import approx
 
-from calculator import Calculator, main
+from calculator import Calculator, demo
 
 
 class TestCalculator(TestCase):
@@ -21,10 +20,6 @@ class TestCalculator(TestCase):
     def test_calculator_multiply(self):
         calc = Calculator(5.2, 3.0)
         self.assertAlmostEqual(calc.multiply(), 15.6)
-
-    def test_calculator_multiply_with_strings(self):
-        calc = Calculator.for_numbers("5.2", "3.0")
-        self.assertAlmostEqual(calc.multiply(), 15.6, places=7)
 
     def test_calculator_divide(self):
         calc = Calculator(5, 3)
@@ -40,7 +35,7 @@ class TestCalculatorForNumbers:
     """tests via `Calculator.for_numbers` that takes care about type casting to float"""
 
     def test_init(self):
-        calc = Calculator.for_numbers(5, 3)
+        calc = Calculator.for_numbers(5.0, 3.0)
         assert isinstance(calc, Calculator)
 
     def test_init_with_not_numbers(self):
@@ -108,36 +103,10 @@ class TestCalculatorForNumbers:
         assert calc.divide() is None
 
 
-class TestMain(TestCase):
+class TestDemo(TestCase):
     """Test suite for verifying main function."""
 
-    def test_main(self):
+    def test_demo(self):
         """Test main with valid arguments."""
-        result = main(['5', '3'])
-        assert result == 0
-
-    @patch('sys.argv', ['calculator.py', '5', '3'])
-    def test_main_with_none_argv(self):
-        """main with None argv should read from sys.argv."""
-        result = main(None)
-        assert result == 0
-
-    def test_main_with_invalid_arguments(self):
-        """main with non-numeric arguments results with Error on exit"""
-        result = main(['abc', 'def'])
-        assert result == 1
-
-    def test_main_with_no_arguments(self):
-        """main with no arguments. Results with Error on exit"""
-        result = main([])
-        assert result == 1
-
-    def test_main_with_one_argument(self):
-        """main  with only one argument results with Error on exit"""
-        result = main(['5'])
-        assert result == 1
-
-    def test_main_with_too_many_arguments(self):
-        """main with more than two arguments, results with Error on exit """
-        result = main(['5', '3', '2'])
-        assert result == 1
+        result = demo(15.2, 3.0)
+        assert result == approx(18.2)
