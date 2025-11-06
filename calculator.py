@@ -7,7 +7,7 @@ class Calculator:
 
     @classmethod
     def for_numbers(cls, op1, op2):
-        """Create Calculator instance from values that need conversion to float.
+        """Creates Calculator instance from values that need conversion to float.
         Additional layer, so that we do not need to worry about types inside the class.
 
         Args:
